@@ -73,7 +73,7 @@ setInterval(async () => {
             `<a:Animated_Arrow_Purple:1437935101282488391> RESPONSE TIME: ${ping ? ping + "ms" : "N/A"}`
           )
           .setImage("https://i.imgur.com/keaieLU.gif")
-          .setFooter({ text: "EXECLAVES Site Monitor" });
+          .setFooter({ text: "ARCEUS Site Monitor" });
 
         await channel.send({ content: statusText, embeds: [embed] });
       }
@@ -110,23 +110,23 @@ client.on("messageCreate", async (message) => {
           `-- <a:c_heart_purple:1437938647688151142> **ARCEUS STATS** <a:c_heart_purple:1437938647688151142> --\n\n` +
           `<a:Animated_Arrow_Purple:1437935101282488391> **User:** ${userName}\n\n` +
           `<a:Animated_Arrow_Purple:1437935101282488391> **TOTAL STATS:**\n` +
-          `__Hits:__ ${formatNumber(normal.Totals?.Accounts)}\n` +
-          `__Summary:__ ${formatNumber(normal.Totals?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(normal.Totals?.Rap)}\n` +
-          `__Clicks:__ ${formatNumber(normal.Totals?.Clicks)}\n\n` +
+          `Hits: ${formatNumber(normal.Totals?.Accounts)}\n` +
+          `Summary: ${formatNumber(normal.Totals?.Summary)}\n` +
+          `RAP: ${formatNumber(normal.Totals?.Rap)}\n` +
+          `Clicks: ${formatNumber(normal.Totals?.Clicks)}\n\n` +
           
           
           `<a:c_heart_purple:1437938647688151142> **BIGGEST HIT:**\n` +
-          `--Robux:__ ${formatNumber(normal.Highest?.Balance)}\n` +
-          `__Summary:__ ${formatNumber(normal.Highest?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(normal.Highest?.Rap)}\n\n` +
+          `Robux: ${formatNumber(normal.Highest?.Balance)}\n` +
+          `Summary: ${formatNumber(normal.Highest?.Summary)}\n` +
+          `RAP: ${formatNumber(normal.Highest?.Rap)}\n\n` +
           `──────\n\n` +
          
           
           `<a:c_heart_purple:1437938647688151142> **TOTAL HIT STATS:**\n` +
-          `__Summary:__ ${formatNumber(normal.Totals?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(normal.Totals?.Rap)}\n` +
-          `__Robux:__ ${formatNumber(normal.Totals?.Balance)}`
+          `Summary: ${formatNumber(normal.Totals?.Summary)}\n` +
+          `RAP: ${formatNumber(normal.Totals?.Rap)}\n` +
+          `Robux: ${formatNumber(normal.Totals?.Balance)}`
         )
         .setImage("https://i.imgur.com/keaieLU.gif")
         .setFooter({ text: "ARCEUS STATS " });
@@ -156,19 +156,19 @@ client.on("messageCreate", async (message) => {
           `-- <a:c_heart_purple:1437938647688151142> **ARCEUS DAILY** <a:c_heart_purple:1437938647688151142> --\n\n` +
           `<a:Animated_Arrow_Purple:1437935101282488391> **User:** ${userName}\n\n` +
           `<a:c_heart_purple:1437938647688151142> **DAILY STATS:** <a:c_heart_purple:1437938647688151142>\n` +
-          `__Hits:__ ${formatNumber(daily.Totals?.Accounts)}\n` +
-          `__Summary:__ ${formatNumber(daily.Totals?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(daily.Totals?.Rap)}\n\n` +
+          `Hits: ${formatNumber(daily.Totals?.Accounts)}\n` +
+          `Summary: ${formatNumber(daily.Totals?.Summary)}\n` +
+          `RAP: ${formatNumber(daily.Totals?.Rap)}\n\n` +
           `──────\n\n` +
           `<a:Animated_Arrow_Purple:1437935101282488391> **BIGGEST HIT:**\n` +
-          `__Robux:__ ${formatNumber(daily.Highest?.Balance)}\n` +
-          `__Summary:__ ${formatNumber(daily.Highest?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(daily.Highest?.Rap)}\n\n` +
+          `Robux: ${formatNumber(daily.Highest?.Balance)}\n` +
+          `Summary: ${formatNumber(daily.Highest?.Summary)}\n` +
+          `RAP: ${formatNumber(daily.Highest?.Rap)}\n\n` +
           `──────\n\n` +
           `<a:Animated_Arrow_Purple:1437935101282488391> **TOTAL HIT STATS:**\n` +
-          `__Summary:__ ${formatNumber(daily.Totals?.Summary)}\n` +
-          `__RAP:__ ${formatNumber(daily.Totals?.Rap)}\n` +
-          `__Robux:__ ${formatNumber(daily.Totals?.Balance)}`
+          `Summary: ${formatNumber(daily.Totals?.Summary)}\n` +
+          `RAP: ${formatNumber(daily.Totals?.Rap)}\n` +
+          `Robux: ${formatNumber(daily.Totals?.Balance)}`
         )
         .setImage("https://i.imgur.com/keaieLU.gif")
         .setFooter({ text: "ARCEUS Daily Stats" });
@@ -195,10 +195,10 @@ client.on("messageCreate", async (message) => {
         ping = null;
       }
 
-      const statusText = res.ok ? " ONLINE ✅" : "OFFLINE ❌";
+      const statusText = res.ok ? " ONLINE " : "OFFLINE ❌";
       const uptimeText = res.ok && lastUpTime
         ? `UP for ${formatDuration(Date.now() - lastUpTime)}`
-        : "❌ No uptime data";
+        : " No uptime data";
 
       const embed = new EmbedBuilder()
         .setColor(0x000000)
